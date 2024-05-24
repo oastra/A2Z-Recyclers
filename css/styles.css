@@ -1,3 +1,21 @@
+/* Ensure body does not overflow */
+body {
+  overflow-x: hidden;
+}
+
+/* Set a max-width on all elements */
+* {
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Handle specific cases where elements might overflow */
+.container,
+.container-fluid,
+.row {
+  overflow-x: hidden;
+}
+
 .xl-text {
   font-size: 75px;
 }
