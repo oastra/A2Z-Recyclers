@@ -75,3 +75,71 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+//  Form Validation
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+  const nameInput = form.querySelector('input[placeholder="Enter name"]');
+  const emailInput = form.querySelector('input[placeholder="Enter email"]');
+  const phoneInput = form.querySelector('input[placeholder="Enter phone"]');
+  const messageTextarea = form.querySelector(
+    'textarea[placeholder="Enter message"]'
+  );
+  const submitButton = form.querySelector('input[type="submit"]');
+
+  const validateName = () => {
+    if (nameInput.value.trim() === "") {
+      nameInput.setCustomValidity("Name is required.");
+      nameInput.reportValidity();
+    } else {
+      nameInput.setCustomValidity("");
+    }
+  };
+
+  const validateEmail = () => {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(emailInput.value)) {
+      emailInput.setCustomValidity("Please enter a valid email address.");
+      emailInput.reportValidity();
+    } else {
+      emailInput.setCustomValidity("");
+    }
+  };
+
+  const validatePhone = () => {
+    const phonePattern = /^[0-9]{10}$/;
+    if (!phonePattern.test(phoneInput.value)) {
+      phoneInput.setCustomValidity(
+        "Please enter a valid 10-digit phone number."
+      );
+      phoneInput.reportValidity();
+    } else {
+      phoneInput.setCustomValidity("");
+    }
+  };
+
+  const validateMessage = () => {
+    if (messageTextarea.value.trim() === "") {
+      messageTextarea.setCustomValidity("Message is required.");
+      messageTextarea.reportValidity();
+    } else {
+      messageTextarea.setCustomValidity("");
+    }
+  };
+
+  nameInput.addEventListener("input", validateName);
+  emailInput.addEventListener("input", validateEmail);
+  phoneInput.addEventListener("input", validatePhone);
+  messageTextarea.addEventListener("input", validateMessage);
+
+  form.addEventListener("submit", (event) => {
+    validateName();
+    validateEmail();
+    validatePhone();
+    validateMessage();
+
+    if (!form.checkValidity()) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  });
+});

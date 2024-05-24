@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A2Z Recyclers promotes sustainable recycling habits and provides information on various recycling projects. Join us in making a difference for a cleaner, greener environment."
+    />
+    <meta
+      name="keywords"
+      content="A2Z Recyclers, recycling, sustainable practices, waste management, environmental responsibility, green initiatives, community projects"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -61,7 +70,7 @@
 
     <!-- Header -->
 
-    <header class="header position-relative mt-4 overflow-hidden">
+    <header class="header position-relative mt-2 overflow-hidden">
       <img
         src="images/recycling/decoration-star.svg"
         alt=""
@@ -94,12 +103,12 @@
               >
             </div>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 align-self-start">
             <div class="image-container">
               <img
                 src="images/logos/recycle3.svg"
-                alt=""
-                class="logo w-100 h-100"
+                alt="Recycle icon"
+                class="logo"
               />
             </div>
           </div>
@@ -162,10 +171,12 @@
       />
       <div class="container position-relative z-3">
         <div class="row">
-          <div class="col-lg-6">
-            <div class="image-container d-flex justify-content-center">
+          <div class="col-lg-6 d-flex">
+            <div
+              class="image-container d-flex justify-content-center align-items-end"
+            >
               <img
-                src="images/recycling/details3.png"
+                src="images/recycling/details3.webp"
                 alt=""
                 class="img-fluid"
               />
@@ -333,7 +344,7 @@
           <div class="col-lg-6 oveflow-hidden">
             <div class="image-container d-flex justify-content-center">
               <img
-                src="images/recycling/details4-remBg.png"
+                src="images/recycling/details4-remBg.webp"
                 alt=""
                 class="img-fluid"
               />
@@ -377,7 +388,7 @@
             <div class="card border-0 rounded-4">
               <a data-bs-toggle="modal" data-bs-target="#modal1">
                 <img
-                  src="images/recycling/project-1.png"
+                  src="images/recycling/project-1.webp"
                   alt="Progect 1"
                   class="border border-2 border-secondary rounded-4 w-100 h-100"
                 />
@@ -400,7 +411,7 @@
             <div class="card border-0">
               <a data-bs-toggle="modal" data-bs-target="#modal2">
                 <img
-                  src="images/recycling/project-2.png"
+                  src="images/recycling/project-2.webp"
                   alt="Progect 2"
                   class="border border-2 border-warning rounded-4 w-100 h-100"
                 />
@@ -423,7 +434,7 @@
             <div class="card border-0">
               <a data-bs-toggle="modal" data-bs-target="#modal3">
                 <img
-                  src="images/recycling/project-3.png"
+                  src="images/recycling/project-3.webp"
                   alt="Progect 3"
                   class="border border-2 border-primary rounded-4 w-100 h-100"
                 />
@@ -464,7 +475,7 @@
                     class="col-lg-12 d-flex justify-center align-items-center gap-2"
                   >
                     <img
-                      src="images/recycling/project-1.png"
+                      src="images/recycling/project-1.webp"
                       alt=""
                       class="img-fluid rounded-4"
                     />
@@ -547,7 +558,7 @@
                     class="col-lg-12 d-flex justify-center align-items-center gap-2"
                   >
                     <img
-                      src="images/recycling/project-2.png"
+                      src="images/recycling/project-2.webp"
                       alt=""
                       class="img-fluid rounded-4"
                     />
@@ -625,7 +636,7 @@
                     class="col-lg-12 d-flex justify-center align-items-center gap-2"
                   >
                     <img
-                      src="images/recycling/project-3.png"
+                      src="images/recycling/project-3.webp"
                       alt=""
                       class="img-fluid rounded-4"
                     />
@@ -810,22 +821,19 @@
             <div
               class="image-container d-flex justify-content-center align-items-end"
             >
-              <img
-                src="images/logos/recycle2.svg"
-                alt="contact"
-                class="logo-contact w-100 h-100"
-              />
+              <img src="images/logos/recycle2.svg" alt="contact" class="logo" />
             </div>
           </div>
           <div class="col-lg-6">
             <div class="text-container">
               <h2>Contact Us For A Quote</h2>
-              <form>
+              <form name="contact" netlify>
                 <div class="mb-3">
                   <input
                     type="text"
                     class="form-control"
                     placeholder="Enter name"
+                    name="name"
                   />
                 </div>
                 <div class="mb-3">
@@ -833,6 +841,7 @@
                     type="email"
                     class="form-control"
                     placeholder="Enter email"
+                    name="email"
                   />
                 </div>
                 <div class="mb-3">
@@ -840,6 +849,7 @@
                     type="text"
                     class="form-control"
                     placeholder="Enter phone"
+                    name="phone"
                   />
                 </div>
                 <div class="mb-3">
