@@ -2,6 +2,9 @@
 body {
   overflow-x: hidden;
 }
+a {
+  cursor: pointer;
+}
 
 /* Set a max-width on all elements */
 // * {
@@ -141,4 +144,8 @@ body {
   }
 }
 @media (max-widht: 576px) {
+  .modal {
+    display: flex !important;
+    flex-direction: column !important;
+  }
 }

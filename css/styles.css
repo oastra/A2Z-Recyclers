@@ -3,6 +3,10 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  cursor: pointer;
+}
+
 /* Set a max-width on all elements */
 /* Handle specific cases where elements might overflow */
 .container,
@@ -135,5 +139,11 @@ body {
   }
   .details-2 .decoration-dots {
     top: 300px;
+  }
+}
+@media (max-widht: 576px) {
+  .modal {
+    display: flex !important;
+    flex-direction: column !important;
   }
 }
