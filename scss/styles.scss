@@ -99,6 +99,14 @@ a {
 .show {
   opacity: 1;
 }
+.footer a {
+  color: #fff;
+  // text-decoration: none;
+}
+.footer a:hover,
+.footer a:active {
+  color: #ccc;
+}
 
 @media (max-width: 992px) {
   .xl-text {
@@ -136,12 +144,12 @@ a {
   .details-2 .decoration-dots {
     top: 300px;
   }
+  // .modal-content {
+  //   display: flex !important;
+  //   flex-direction: column !important;
+  // }
 }
 @media (max-width: 576px) {
-  .modal {
-    display: flex !important;
-    flex-direction: column !important;
-  }
   .logo {
     width: 50%;
   }

@@ -106,6 +106,15 @@ a {
   opacity: 1;
 }
 
+.footer a {
+  color: #fff;
+}
+
+.footer a:hover,
+.footer a:active {
+  color: #ccc;
+}
+
 @media (max-width: 992px) {
   .xl-text {
     font-size: 50px;
@@ -141,10 +150,6 @@ a {
   }
 }
 @media (max-width: 576px) {
-  .modal {
-    display: flex !important;
-    flex-direction: column !important;
-  }
   .logo {
     width: 50%;
   }
