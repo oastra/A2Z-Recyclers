@@ -229,7 +229,9 @@ video {
 .stats-container .row {
   margin-top: 30px !important;
 }
-
+.row {
+  --bs-gutter-x: 0 !important;
+}
 @media (max-width: 576px) {
   .logo {
     width: 50%;
