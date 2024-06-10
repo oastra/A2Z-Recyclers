@@ -1,43 +1,99 @@
-/* Ensure body does not overflow */
 body {
   overflow-x: hidden;
+  max-width: 100%;
 }
+
 a {
   cursor: pointer;
 }
 
-/* Handle specific cases where elements might overflow */
 .container,
 .container-fluid,
 .row {
   overflow-x: hidden;
 }
 
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
 .xl-text {
   font-size: 75px;
 }
-.btn-outline-secondary {
-  color: var(--bs-secondary);
-}
-.btn-outline-secondary {
+
+.btn-nav {
+  border: 1px solid rgb(24, 136, 56);
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  line-height: 24px;
+  color: rgb(24, 136, 56);
   &:hover {
-    color: #fff;
+    color: rgb(24, 136, 56);
+    border: 2px solid rgb(24, 136, 56);
+    background-color: #fff !important;
   }
 }
+
+.btn-outline-secondary {
+  color: var(--bs-secondary) !important;
+  &:hover {
+    color: #fff !important;
+  }
+}
+.btn-input {
+  border: 2px solid #fff;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  position: relative !important;
+  background-color: rgba(255, 255, 255, 0.817);
+}
+
+.btn-outline-white {
+  border: 2px solid #fff;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  position: relative !important;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid #002241;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    pointer-events: none;
+  }
+}
+
 .header .decoration-dots {
   top: 10px;
   left: -200px;
   width: 500px;
   opacity: 0.8;
+  object-fit: contain;
 }
+
 .header .decoration-dots-2 {
   top: 100px;
   right: -200px;
   width: 600px;
   opacity: 0.8;
 }
+
 .logo {
   width: 569px;
+  height: 493px;
+}
+
+.logo-contact {
   height: 493px;
 }
 
@@ -50,23 +106,44 @@ a {
   opacity: 0.9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
 .details .decoration-dots {
   left: -200px;
   width: 500px;
   opacity: 0.8;
 }
+
 .details-2 .decoration-dots {
   right: -200px;
   width: 500px;
 }
+
 .details-2 .decoration-dots-green {
   right: 200px;
   bottom: -150px;
   width: 500px;
 }
+
+.img-modal-circle {
+  width: 200px;
+}
+
 .contact .decoration-dots {
   left: -300px;
   width: 600px;
+}
+
+// Form validation
+.error-border {
+  border-color: red;
+}
+
+.error-message {
+  visibility: hidden;
+}
+
+.error-message.active {
+  visibility: visible;
 }
 
 .to-top-btn {
@@ -83,39 +160,37 @@ a {
   background-color: #44434a;
   cursor: pointer;
   transition: all 0.5 ease-in-out;
-}
-.to-top-btn {
   &:hover {
     background-color: #1d1d21;
   }
-}
-.to-top-btn {
   img {
     margin-bottom: 0.25rem;
     width: 18px;
   }
 }
 
+.carousel-item {
+  min-height: 30rem;
+}
+
 .show {
   opacity: 1;
 }
+
 .footer a {
   color: #fff;
-  // text-decoration: none;
-}
-.footer a:hover,
-.footer a:active {
-  color: #ccc;
+  &:hover,
+  &:active {
+    color: #ccc;
+  }
 }
 
 @media (max-width: 992px) {
   .xl-text {
     font-size: 50px;
   }
-  .navbar {
-    .btn-outline-secondary {
-      margin-top: 20px;
-    }
+  .navbar .btn-outline-secondary {
+    margin-top: 20px;
   }
   .header {
     margin-top: 0px !important;
@@ -132,23 +207,29 @@ a {
   .header .image-container {
     margin-top: 30px;
   }
+  .logo {
+    width: auto;
+    height: auto;
+  }
   .services .col-lg-7 .col-md-4 {
     border-bottom: 1px solid #ccc !important;
     margin: 10px 0;
     padding-bottom: 10px;
   }
-
   .details-2 {
     margin-top: 20px !important;
   }
   .details-2 .decoration-dots {
     top: 300px;
   }
-  // .modal-content {
-  //   display: flex !important;
-  //   flex-direction: column !important;
-  // }
+  .projects .card {
+    margin-top: 48px;
+  }
 }
+.stats-container .row {
+  margin-top: 30px !important;
+}
+
 @media (max-width: 576px) {
   .logo {
     width: 50%;

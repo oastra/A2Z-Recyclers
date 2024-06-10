@@ -1,29 +1,76 @@
-/* Ensure body does not overflow */
 body {
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 a {
   cursor: pointer;
 }
 
-/* Handle specific cases where elements might overflow */
 .container,
 .container-fluid,
 .row {
   overflow-x: hidden;
 }
 
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
 .xl-text {
   font-size: 75px;
 }
 
-.btn-outline-secondary {
-  color: var(--bs-secondary);
+.btn-nav {
+  border: 1px solid rgb(24, 136, 56);
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  line-height: 24px;
+  color: rgb(24, 136, 56);
+}
+.btn-nav:hover {
+  color: rgb(24, 136, 56);
+  border: 2px solid rgb(24, 136, 56);
+  background-color: #fff !important;
 }
 
+.btn-outline-secondary {
+  color: var(--bs-secondary) !important;
+}
 .btn-outline-secondary:hover {
-  color: #fff;
+  color: #fff !important;
+}
+
+.btn-input {
+  border: 2px solid #fff;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  position: relative !important;
+  background-color: rgba(255, 255, 255, 0.817);
+}
+
+.btn-outline-white {
+  border: 2px solid #fff;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  position: relative !important;
+}
+.btn-outline-white::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid #002241;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  pointer-events: none;
 }
 
 .header .decoration-dots {
@@ -31,6 +78,7 @@ a {
   left: -200px;
   width: 500px;
   opacity: 0.8;
+  object-fit: contain;
 }
 
 .header .decoration-dots-2 {
@@ -42,6 +90,10 @@ a {
 
 .logo {
   width: 569px;
+  height: 493px;
+}
+
+.logo-contact {
   height: 493px;
 }
 
@@ -72,9 +124,25 @@ a {
   width: 500px;
 }
 
+.img-modal-circle {
+  width: 200px;
+}
+
 .contact .decoration-dots {
   left: -300px;
   width: 600px;
+}
+
+.error-border {
+  border-color: red;
+}
+
+.error-message {
+  visibility: hidden;
+}
+
+.error-message.active {
+  visibility: visible;
 }
 
 .to-top-btn {
@@ -92,14 +160,16 @@ a {
   cursor: pointer;
   transition: all 0.5 ease-in-out;
 }
-
 .to-top-btn:hover {
   background-color: #1d1d21;
 }
-
 .to-top-btn img {
   margin-bottom: 0.25rem;
   width: 18px;
+}
+
+.carousel-item {
+  min-height: 30rem;
 }
 
 .show {
@@ -109,9 +179,7 @@ a {
 .footer a {
   color: #fff;
 }
-
-.footer a:hover,
-.footer a:active {
+.footer a:hover, .footer a:active {
   color: #ccc;
 }
 
@@ -137,6 +205,10 @@ a {
   .header .image-container {
     margin-top: 30px;
   }
+  .logo {
+    width: auto;
+    height: auto;
+  }
   .services .col-lg-7 .col-md-4 {
     border-bottom: 1px solid #ccc !important;
     margin: 10px 0;
@@ -148,7 +220,14 @@ a {
   .details-2 .decoration-dots {
     top: 300px;
   }
+  .projects .card {
+    margin-top: 48px;
+  }
 }
+.stats-container .row {
+  margin-top: 30px !important;
+}
+
 @media (max-width: 576px) {
   .logo {
     width: 50%;

@@ -84,51 +84,58 @@ document.addEventListener("DOMContentLoaded", () => {
   const messageTextarea = form.querySelector(
     'textarea[placeholder="Enter message"]'
   );
-  const submitButton = form.querySelector('input[type="submit"]');
+
+  const showError = (input, message) => {
+    const errorDiv = input.parentElement.querySelector(".error-message");
+    errorDiv.textContent = message;
+    errorDiv.classList.add("active");
+    input.classList.add("error-border");
+  };
+
+  const clearError = (input) => {
+    const errorDiv = input.parentElement.querySelector(".error-message");
+    errorDiv.textContent = "";
+    errorDiv.classList.remove("active");
+    input.classList.remove("error-border");
+  };
 
   const validateName = () => {
     if (nameInput.value.trim() === "") {
-      nameInput.setCustomValidity("Name is required.");
-      nameInput.reportValidity();
+      showError(nameInput, "Name is required.");
     } else {
-      nameInput.setCustomValidity("");
+      clearError(nameInput);
     }
   };
 
   const validateEmail = () => {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(emailInput.value)) {
-      emailInput.setCustomValidity("Please enter a valid email address.");
-      emailInput.reportValidity();
+      showError(emailInput, "Please enter a valid email address.");
     } else {
-      emailInput.setCustomValidity("");
+      clearError(emailInput);
     }
   };
 
   const validatePhone = () => {
     const phonePattern = /^[0-9]{10}$/;
     if (!phonePattern.test(phoneInput.value)) {
-      phoneInput.setCustomValidity(
-        "Please enter a valid 10-digit phone number."
-      );
-      phoneInput.reportValidity();
+      showError(phoneInput, "Please enter a valid 10-digit phone number.");
     } else {
-      phoneInput.setCustomValidity("");
+      clearError(phoneInput);
     }
   };
 
   const validateMessage = () => {
     if (messageTextarea.value.trim() === "") {
-      messageTextarea.setCustomValidity("Message is required.");
-      messageTextarea.reportValidity();
+      showError(messageTextarea, "Message is required.");
     } else {
-      messageTextarea.setCustomValidity("");
+      clearError(messageTextarea);
     }
   };
 
-  nameInput.addEventListener("input", validateName);
-  emailInput.addEventListener("input", validateEmail);
-  phoneInput.addEventListener("input", validatePhone);
+  nameInput.addEventListener("focusout", validateName);
+  emailInput.addEventListener("focusout", validateEmail);
+  phoneInput.addEventListener("focusout", validatePhone);
   messageTextarea.addEventListener("input", validateMessage);
 
   form.addEventListener("submit", (event) => {
